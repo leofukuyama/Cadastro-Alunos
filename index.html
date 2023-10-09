@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Alunos</title>
+    <link rel="icon" type="image/x-icon" href="icone.png">
+    <link rel="stylesheet" href="styles.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <header>
+        <h1>CADASTRO DE ALUNOS</h1>
+    </header>
+
+    <main>
+        <div class="titulo">
+            <h2>LISTA DE ALUNOS</h2>
+            <span>ALUNOS</span>
+        </div>
+
+        <div class="campo">
+            <div class="inputLine">
+                <label for="nomeAluno">NOME DO ALUNO</label>
+                <input type="text" id="nomeAluno" placeholder="NOME DO ALUNO">
+            </div>
+            <div class="inputLine">
+                <label for="idadeAluno">IDADE DO ALUNO</label>
+                <input type="text" id="nomeAluno" placeholder="IDADE DO ALUNO">
+            </div>
+            <div class="inputLine">
+                <label for="emailAluno">E-MAIL DO ALUNO</label>
+                <input type="text" id="nomeAluno" placeholder="E-MAIL DO ALUNO">
+            </div>
+            <div class="inputLine">
+                <label for="cpfAluno">CPF DO ALUNO</label>
+                <input type="text" id="nomeAluno" placeholder="CPF DO ALUNO">
+            </div>
+            <button onclick="aluno.cadastrar()">CADASTRAR</button>
+            <button onclick="aluno.cancelar()">CANCELAR</button>
+        </div>
+
+        <div class="tabela">
+            <table border="1">
+                <thead>
+                    <th>NOME</th>
+                    <th>IDADE</th>
+                    <th>E-MAIL</th>
+                    <th>CPF</th>
+                </thead>
+                <tbody id="tbody"></tbody>
+            </table>
+        </div>
+    </main>
+</body>
+</html>
