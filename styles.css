@@ -39,6 +39,14 @@ main {
     padding-bottom: 15px;
 }
 
+.flex-container {
+    display: flex;
+}
+
+.flex-child {
+    flex: 1;
+}
+
 input {
     border: 1px solid black;
     padding: 10px;
@@ -58,6 +66,7 @@ button {
     color: black;
     font-weight: bold;
     transition: all ease 0.3s;
+    margin: 10px
 }
 
 button:hover {

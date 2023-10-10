@@ -20,22 +20,27 @@
         </div>
 
         <div class="campo">
-            <div class="inputLine">
-                <label for="nomeAluno">NOME DO ALUNO</label>
-                <input type="text" id="nomeAluno" placeholder="NOME DO ALUNO">
+            <div class="flex-container">
+                <div class="inputLine flex-child">
+                    <label for="nomeAluno">NOME DO ALUNO</label>
+                    <input type="text" id="nomeAluno" placeholder="NOME DO ALUNO">
+                </div>
+                <div class="inputLine flex-child">
+                    <label for="idadeAluno">IDADE DO ALUNO</label>
+                    <input type="text" id="nomeAluno" placeholder="IDADE DO ALUNO">
+                </div>
             </div>
-            <div class="inputLine">
-                <label for="idadeAluno">IDADE DO ALUNO</label>
-                <input type="text" id="nomeAluno" placeholder="IDADE DO ALUNO">
+            <div class="flex-container">
+                <div class="inputLine flex-child">
+                    <label for="emailAluno">E-MAIL DO ALUNO</label>
+                    <input type="text" id="nomeAluno" placeholder="E-MAIL DO ALUNO">
+                </div>
+                <div class="inputLine flex-child">
+                    <label for="cpfAluno">CPF DO ALUNO</label>
+                    <input type="text" id="nomeAluno" placeholder="CPF DO ALUNO">
+                </div>
             </div>
-            <div class="inputLine">
-                <label for="emailAluno">E-MAIL DO ALUNO</label>
-                <input type="text" id="nomeAluno" placeholder="E-MAIL DO ALUNO">
-            </div>
-            <div class="inputLine">
-                <label for="cpfAluno">CPF DO ALUNO</label>
-                <input type="text" id="nomeAluno" placeholder="CPF DO ALUNO">
-            </div>
+
             <button onclick="aluno.cadastrar()">CADASTRAR</button>
             <button onclick="aluno.cancelar()">CANCELAR</button>
         </div>
