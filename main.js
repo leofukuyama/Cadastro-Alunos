@@ -96,7 +96,6 @@ class Aluno {
           for (let i = 0; i < this.ObjArray.length; i++) {
             if (this.ObjArray[i].id == id) {
               this.ObjArray.splice(i, 1);
-              console.log(this.ObjArray);
               tbody.deleteRow(i);
             };
           };
