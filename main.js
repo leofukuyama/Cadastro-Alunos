@@ -1,10 +1,12 @@
 class Aluno {
     constructor() {
+        this.id = 1;
         this.ObjArray = [];
     };
 
     lerDados() {
         let estud = {};
+        estud.id = this.id;
         estud.nome = document.getElementById("nomeAluno").value;
         estud.idade = document.getElementById("idadeAluno").value;
         estud.email = document.getElementById("emailAluno").value;
@@ -52,11 +54,14 @@ class Aluno {
         for (let i = 0; i < this.ObjArray.length; i++) {
             let tr = tbody.insertRow();
 
+            let td_id = tr.insertCell();
             let td_nome = tr.insertCell();
             let td_idade = tr.insertCell();
             let td_email = tr.insertCell();
             let td_cpf = tr.insertCell();
+            let td_acao = tr.insertCell();
 
+            td_id.innerText = this.ObjArray[i].id;
             td_nome.innerText = this.ObjArray[i].nome;
             td_idade.innerText = this.ObjArray[i].idade;
             td_email.innerText = this.ObjArray[i].email;
@@ -77,6 +82,7 @@ class Aluno {
         if (this.validarCampos(alunoSalvo)) {
             this.adicionar(alunoSalvo);
             this.inserirCampos();
+            this.id++;
         };
     };
 
