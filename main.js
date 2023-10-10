@@ -73,6 +73,10 @@ class Aluno {
 
             let imgExc = document.createElement("img");
             imgExc.src = "delete.png";
+            imgExc.setAttribute(
+                "onclick",
+                "aluno.excluir(" + this.ObjArray[i].id + ")"
+              );
             td_acao.appendChild(imgExc);
         };
     };
@@ -85,6 +89,19 @@ class Aluno {
             this.id++;
         };
     };
+
+    excluir(id) {
+        if (confirm("DESEJA REALMENTE EXCLUIR O PRODUTO?")) {
+          let tbody = document.getElementById("tbody");
+          for (let i = 0; i < this.ObjArray.length; i++) {
+            if (this.ObjArray[i].id == id) {
+              this.ObjArray.splice(i, 1);
+              console.log(this.ObjArray);
+              tbody.deleteRow(i);
+            };
+          };
+        };
+      };
 
 };
 
