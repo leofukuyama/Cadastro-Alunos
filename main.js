@@ -67,7 +67,7 @@ class Aluno {
             td_acao.appendChild(imgEdit);
             let imgExc = document.createElement("img");
             imgExc.src = "excluir.png";
-            td_acao.appendChild(imgExc);
+            td_acao.appendChild(imgExc);kj
         };
     };
 
