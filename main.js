@@ -63,11 +63,12 @@ class Aluno {
             td_cpf.innerText = this.ObjArray[i].cpf;
 
             let imgEdit = document.createElement("img");
-            imgEdit.src = "editar.png";
+            imgEdit.src = "edit.png";
             td_acao.appendChild(imgEdit);
+
             let imgExc = document.createElement("img");
-            imgExc.src = "excluir.png";
-            td_acao.appendChild(imgExc);kj
+            imgExc.src = "delete.png";
+            td_acao.appendChild(imgExc);
         };
     };
 
