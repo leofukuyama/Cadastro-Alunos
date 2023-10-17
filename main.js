@@ -2,6 +2,7 @@ class Aluno {
     constructor() {
         this.id = 1;
         this.ObjArray = [];
+        this.idAtualizar = null;
     };
 
     lerDados() {
@@ -69,6 +70,10 @@ class Aluno {
 
             let imgEdit = document.createElement("img");
             imgEdit.src = "edit.png";
+            imgEdit.setAttribute(
+                "onclick",
+                "aluno.editar(" + JSON.stringify(this.ObjArray[i]) + ")"
+            )
             td_acao.appendChild(imgEdit);
 
             let imgExc = document.createElement("img");
@@ -84,9 +89,13 @@ class Aluno {
     cadastrar() {
         let alunoSalvo = this.lerDados();
         if (this.validarCampos(alunoSalvo)) {
-            this.adicionar(alunoSalvo);
-            this.inserirCampos();
-            this.id++;
+            if (this.idAtualizar == null) {
+                this.adicionar(alunoSalvo);
+                this.inserirCampos();
+                this.id++;
+            } else {
+                this.atualizar(this.idAtualizar, alunoSalvo);
+            };
         };
     };
 
@@ -102,6 +111,25 @@ class Aluno {
         };
       };
 
+    editar(aluno) {
+        this.idAtualizar = this.id;
+        document.getElementById("nomeAluno").value = aluno.nome;
+        document.getElementById("idadeAluno").value = aluno.idade;
+        document.getElementById("emailAluno").value = aluno.email;
+        document.getElementById("cpfAluno").value = aluno.cpf;
+        document.getElementById("cadAluno").innerHTML = `ATUALIZAR`;
+    };
+
+    atualizar(id, aluno) {
+        for (let i = 0; i < this.ObjArray.length; i++) {
+            if (this.ObjArray[i].id = id) {
+                this.ObjArray[i].nome = aluno.nome;
+                this.ObjArray[i].idade = aluno.idade;
+                this.ObjArray[i].email = aluno.email;
+                this.ObjArray[i].cpf = aluno.cpf;
+            };
+        };
+    };
 };
 
 let aluno = new Aluno();
