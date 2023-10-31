@@ -81,7 +81,7 @@ class Aluno {
             imgExc.setAttribute(
                 "onclick",
                 "aluno.excluir(" + this.ObjArray[i].id + ")"
-              );
+            );
             td_acao.appendChild(imgExc);
         };
     };
@@ -91,12 +91,13 @@ class Aluno {
         if (this.validarCampos(alunoSalvo)) {
             if (this.idAtualizar == null) {
                 this.adicionar(alunoSalvo);
-                this.inserirCampos();
                 this.id++;
             } else {
+                console.log(this.idAtualizar);
                 this.atualizar(this.idAtualizar, alunoSalvo);
             };
         };
+        this.inserirCampos();
     };
 
     excluir(id) {
@@ -111,18 +112,18 @@ class Aluno {
         };
       };
 
-    editar(aluno) {
-        this.idAtualizar = this.id;
-        document.getElementById("nomeAluno").value = aluno.nome;
-        document.getElementById("idadeAluno").value = aluno.idade;
-        document.getElementById("emailAluno").value = aluno.email;
-        document.getElementById("cpfAluno").value = aluno.cpf;
-        document.getElementById("cadAluno").innerHTML = `ATUALIZAR`;
+    editar(novoAluno) {
+        this.idAtualizar = novoAluno.id;
+        document.getElementById("nomeAluno").value = novoAluno.nome;
+        document.getElementById("idadeAluno").value = novoAluno.idade;
+        document.getElementById("emailAluno").value = novoAluno.email;
+        document.getElementById("cpfAluno").value = novoAluno.cpf;
+        document.getElementById("cadAluno").innerHTML = "ATUALIZAR";
     };
 
     atualizar(id, aluno) {
         for (let i = 0; i < this.ObjArray.length; i++) {
-            if (this.ObjArray[i].id = id) {
+            if (this.ObjArray[i].id == id) {
                 this.ObjArray[i].nome = aluno.nome;
                 this.ObjArray[i].idade = aluno.idade;
                 this.ObjArray[i].email = aluno.email;
