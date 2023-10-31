@@ -94,6 +94,7 @@ class Aluno {
                 this.id++;
             } else {
                 this.atualizar(this.idAtualizar, alunoSalvo);
+                document.getElementById("cadAluno").innerHTML = "CADASTRAR";
             };
         };
         this.inserirCampos();
