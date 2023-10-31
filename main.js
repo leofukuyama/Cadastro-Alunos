@@ -93,7 +93,6 @@ class Aluno {
                 this.adicionar(alunoSalvo);
                 this.id++;
             } else {
-                console.log(this.idAtualizar);
                 this.atualizar(this.idAtualizar, alunoSalvo);
             };
         };
